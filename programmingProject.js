@@ -37,16 +37,23 @@ function checkPrime(num) {
   }
   return isPrime;
 }
-console.log(checkPrime(20));
+// console.log(checkPrime(20));
 
+// function nextPrime(num) {
+//   let i = num + 1;
+//   while (i > num) {
+//     if (checkPrime(i)) return i;
+//     i++;
+//   }
+// }
 function nextPrime(num) {
   let i = num + 1;
-  while (i > num) {
-    if (checkPrime(i)) return i;
+  while (!checkPrime(i)) {
     i++;
   }
+  return i;
 }
-// console.log(nextPrime(3));
+console.log(nextPrime(7));
 /**
  *
  * @param {number} num number to check if the last digit is
@@ -109,7 +116,7 @@ function addToTarget(arr, num) {
 function mostFrequent(arr) {
   let maxChar;
   let max = 0;
-  let count = 0;
+  let count;
 
   for (let i = 0; i < arr.length; i++) {
     count = 0;
@@ -121,18 +128,19 @@ function mostFrequent(arr) {
     if (count > max) {
       max = count;
       maxChar = arr[i];
+      // console.log([maxChar, max]);
     }
   }
   return maxChar;
 }
-// console.log(mostFrequent([4, 3, 6, 8, 3, 8, 4, 9, 6, 4]));
+console.log(mostFrequent([4, 3, 6, 8, 3, 8, 4, 9, 6, 4]));
 
 // ?---------- 4 ----  done
 
 function closestToZero(arr) {
   let array = [];
   let min = Infinity;
-  let max = -Infinity;
+  // let max = -Infinity;
 
   for (let i = 0; i < arr.length - 1; i++) {
     for (let j = i + 1; j < arr.length; j++) {
@@ -692,9 +700,9 @@ function summaryRanges(arr) {
 
   return arrfinal;
 }
-console.log(summaryRanges([1, 2, 4, 5, 7]));
-console.log(summaryRanges([1, 2, 3, 5, 6, 7, 9]));
-console.log(summaryRanges([0, 1, 2, 4, 5, 7]));
+// console.log(summaryRanges([1, 2, 4, 5, 7]));
+// console.log(summaryRanges([1, 2, 3, 5, 6, 7, 9]));
+// console.log(summaryRanges([0, 1, 2, 4, 5, 7]));
 // summaryRanges([0, 1, 2, 4, 5, 7]), [
 //       "0->2",
 //       "4->5",
@@ -714,3 +722,66 @@ function gcfStrings(str1, str2) {
 // "ABCABC", "ABC"), "ABC"
 // "ABABAB", "ABAB"), "ABAB"
 // "ABCDEF", "ABC"), ""
+
+// ?---------- 2 ----  Programming Comp
+
+function mostFrequentSight(arr) {
+  let maxChar;
+  let max = 0;
+  let count;
+
+  for (let i = 0; i < arr.length; i++) {
+    count = 0;
+    for (let each of arr) {
+      if (arr[i] === each) {
+        count++;
+      }
+    }
+    if (count > max) {
+      max = count;
+      maxChar = arr[i];
+      // console.log([maxChar, max]);
+    }
+  }
+  return maxChar;
+}
+console.log(mostFrequentSight([1, 1, 2, 2, 3]));
+
+// ?---------- 5 ----  Programming Comp
+// Mintes
+
+function computeCharges(arr) {
+  let newArr = [];
+  let ave;
+  let sumOfCharges = 0;
+  let chargesArr;
+  let key;
+  let maxCharge;
+  let newObj;
+
+  for (let each of arr) {
+    newObj = {};
+    key = Object.keys(each);
+    chargesArr = each[key[1]];
+    maxCharge = Math.max(...chargesArr);
+    // console.log(maxCharge);
+    for (let element of chargesArr) {
+      sumOfCharges += element;
+    }
+    ave = sumOfCharges / chargesArr.length;
+    // console.log(ave);
+    newObj[key[0]] = each[key[0]];
+    newObj.average = ave;
+    newObj.maximum = maxCharge;
+    // console.log(newObj);
+    newArr.push(newObj);
+  }
+
+  return newArr;
+}
+
+// const charges = [
+//   { custId: 1, charges: [5, 7, 3] },
+//   { custId: 2, charges: [20, 60, 50, 30] },
+// ];
+console.log(computeCharges(charges));
