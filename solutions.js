@@ -54,7 +54,9 @@ function computeCharges(arr) {
   for (let each of arr) {
     sumOfCharges = 0;
     newObj = {};
+
     key = Object.keys(each);
+
     chargesArr = each[key[1]];
     maxCharge = Math.max(...chargesArr);
     console.log(chargesArr);
