@@ -140,7 +140,7 @@ function makeAbsolute(num) {
   return absolute;
 }
 
-console.log(findMinDistance([3, 2, 1, 2, 3]));
+// console.log(findMinDistance([3, 2, 1, 2, 3]));
 
 function divisibleSumPairs(arr, k) {
   let count = 0;
@@ -155,7 +155,7 @@ function divisibleSumPairs(arr, k) {
   }
   return count;
 }
-console.log(divisibleSumPairs([1, 2, 3, 4, 5, 6], 5));
+// console.log(divisibleSumPairs([1, 2, 3, 4, 5, 6], 5));
 
 /**
  *
@@ -174,4 +174,19 @@ function countSocksPairs(ar) {
   }
   return pairs;
 }
-console.log(countSocksPairs([10, 20, 20, 10, 10, 30, 50, 10, 20]));
+// console.log(countSocksPairs([10, 20, 20, 10, 10, 30, 50, 10, 20]));
+
+// ----------------------------
+
+// It should compare each student’s answers against the correct answers and return an array holding the scores of each student. The score for each student is a count of the number of correct answers (i.e., matches with the key of correct answers).
+// For example
+// const studentAnswers = [[1, 1, 2], [2, 1, 2], [3, 1, 3]]; const correctAnswers = [3, 1, 2];
+// scoreExams(studentAnswers, correctAnswers)); --> [2, 2, 2]
+
+function scoreExams(studentAnswers, correctAnswers) {
+  for (let i = 0; i < studentAnswers.length; i++) {
+    for (let j = 0; j < correctAnswers.length; j++) {
+      studentAnswers[j];
+    }
+  }
+}
