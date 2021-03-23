@@ -180,13 +180,48 @@ function countSocksPairs(ar) {
 
 // It should compare each student’s answers against the correct answers and return an array holding the scores of each student. The score for each student is a count of the number of correct answers (i.e., matches with the key of correct answers).
 // For example
-// const studentAnswers = [[1, 1, 2], [2, 1, 2], [3, 1, 3]]; const correctAnswers = [3, 1, 2];
+const studentAnswers = [
+  [1, 1, 2],
+  [2, 1, 2],
+  [3, 1, 3],
+];
+const correctAnswers = [3, 1, 2];
 // scoreExams(studentAnswers, correctAnswers)); --> [2, 2, 2]
 
 function scoreExams(studentAnswers, correctAnswers) {
+  let arr = [];
   for (let i = 0; i < studentAnswers.length; i++) {
+    let count = 0;
     for (let j = 0; j < correctAnswers.length; j++) {
-      studentAnswers[j];
+      if (studentAnswers[i][j] === correctAnswers[j]) {
+        count++;
+      }
     }
+    arr.push(count);
   }
+  return arr;
 }
+console.log(scoreExams(studentAnswers, correctAnswers));
+
+let str = "2,4,2,3,4,5,3";
+console.log(str.split(","));
+
+function computeGrade(grades) {
+  let sum = 0;
+  let avg;
+  let grade;
+  let length = grades.length;
+  for (let i = 0; i < length; i++) {
+    sum += grades[i];
+  }
+  avg = sum / length;
+
+  if (avg <= 100 || avg >= 90) grade = "A";
+  else if (avg <= 89 || avg >= 80) grade = "B";
+  else if (avg <= 79 || avg >= 70) grade = "C";
+  else if (avg <= 69 || avg >= 60) grade = "D";
+  else grade = "NC";
+  // console.log(grade);
+  return grade;
+}
+console.log(computeGrade([50, 80, 60, 70]));
