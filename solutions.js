@@ -205,23 +205,3 @@ console.log(scoreExams(studentAnswers, correctAnswers));
 
 let str = "2,4,2,3,4,5,3";
 console.log(str.split(","));
-
-function computeGrade(grades) {
-  let sum = 0;
-  let avg;
-  let grade;
-  let length = grades.length;
-  for (let i = 0; i < length; i++) {
-    sum += grades[i];
-  }
-  avg = sum / length;
-
-  if (avg <= 100 || avg >= 90) grade = "A";
-  else if (avg <= 89 || avg >= 80) grade = "B";
-  else if (avg <= 79 || avg >= 70) grade = "C";
-  else if (avg <= 69 || avg >= 60) grade = "D";
-  else grade = "NC";
-  // console.log(grade);
-  return grade;
-}
-console.log(computeGrade([50, 80, 60, 70]));
