@@ -234,8 +234,9 @@ function binaryAddition(str1, str2) {
   if (rem !== "0") return reverse(sum + rem);
   return reverse(sum);
 }
-// console.log(binaryAddition("11", "1"));
-// console.log(binaryAddition("1010", "1011"));
+console.log(binaryAddition("11", "1"));
+console.log(binaryAddition("1010", "1011"));
+console.log(binaryAddition("1011", "10"));
 
 // ?---------- 7 ----   done
 
@@ -745,7 +746,7 @@ function mostFrequentSight(arr) {
   }
   return maxChar;
 }
-console.log(mostFrequentSight([1, 1, 2, 2, 3]));
+// console.log(mostFrequentSight([1, 1, 2, 2, 3]));
 
 // ?---------- 5 ----  Programming Comp
 // Mintes
@@ -784,4 +785,61 @@ function computeCharges(arr) {
 //   { custId: 1, charges: [5, 7, 3] },
 //   { custId: 2, charges: [20, 60, 50, 30] },
 // ];
-console.log(computeCharges(charges));
+// console.log(computeCharges(charges));
+
+function come(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+let x = new come("mintes", 30);
+
+console.log(x);
+
+const charges = [
+  { custId: 1, charges: [5, 7, 3] },
+  { custId: 2, charges: [20, 60, 50, 30] },
+];
+// console.log(computeCharges(charges));
+let y = charges.filter((item) => item.charges.includes(50));
+console.log(y);
+function filterRange(arr, a, b) {
+  return arr.filter((item) => item >= a && item <= b);
+  // let newArr = [];
+  // for (let each of arr) {
+  //   if (each >= a && each <= b) {
+  //     newArr.push(each);
+  //   }
+  // }
+  // return newArr;
+}
+console.log(filterRange([5, 3, 8, 1], 1, 4));
+
+let users = [
+  { id: 1, firstName: "mintes" },
+  { id: 2, firstName: "robbie" },
+];
+
+let m = users.map(function (item, index, array) {
+  return {
+    index: index,
+    firstName: item.firstName,
+    length: item.firstName.length,
+  };
+});
+console.log(m);
+
+let arrReduce = [1, 2, 3, 4, 5, 10, 8];
+
+let reduced = arrReduce.reduce((sum, item) => sum + item, 2);
+console.log(reduced);
+
+D;
+D;
+D;
+D;
+D;
+D;
+D;
+D;
+D;
